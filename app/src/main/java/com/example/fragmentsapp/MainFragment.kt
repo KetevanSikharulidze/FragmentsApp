@@ -33,7 +33,9 @@ class MainFragment : Fragment() {
         binding.apply {
             viewTransactionsBtn.setOnClickListener {
 //                toast
-                Toast.makeText(context, "coming soon!", Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(requireView())
+                    .navigate(MainFragmentDirections
+                        .actionMainFragmentToTransactionsFragment())
             }
             sendMoneyBtn.setOnClickListener {
                 Navigation.findNavController(it)
